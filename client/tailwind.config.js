@@ -6,16 +6,15 @@ export default {
   theme: {
   extend: {
     colors: {
-      primary: "#0B0B0B",
-      card: "#111111",
-      saffron: "#FF7A00",
-      gold: "#D4AF37",
-      text: "#E5E5E5",
+      primary: "#0f0f0f",
+      card: "#1a1a1a",
+      saffron: "#ff7a00",
+      gold: "#d4af37",
+    },
+    fontFamily: {
+      devnagari: ["Noto Serif Devanagari", "serif"],
     },
   },
-  fontFamily: {
-      devnagari: ["Tiro Devanagari Marathi", "serif"],
-    },
 },
   plugins: [],
 }

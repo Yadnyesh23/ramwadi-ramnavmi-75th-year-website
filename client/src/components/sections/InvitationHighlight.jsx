@@ -6,7 +6,9 @@ export default function InvitationHighlight() {
   const { language } = useLanguage();
 
   return (
-    <section className="py-24 bg-primary text-center">
+    <section className="py-28
+max-w-6xl mx-auto
+px-6 bg-primary text-center">
       <div className="max-w-5xl mx-auto px-6">
         <h2 className="font-devnagari text-3xl md:text-4xl text-gold mb-12">
           {language === "mr"
