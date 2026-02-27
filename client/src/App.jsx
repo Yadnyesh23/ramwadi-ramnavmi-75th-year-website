@@ -12,7 +12,7 @@ import AdminLogin from "./pages/AdminLogin";
 
 function App() {
   return (
-    <>
+    <div>
       <Navbar />
 
       <Routes>
@@ -25,7 +25,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/admin" element={<AdminLogin />} />
       </Routes>
-    </>
+    </div>
   );
 }
 
