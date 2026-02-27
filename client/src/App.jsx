@@ -1,5 +1,5 @@
-import { Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MainLayout from "./layout/MainLayout";
 
 import Home from "./pages/Home";
 import Events from "./pages/Events";
@@ -12,20 +12,19 @@ import AdminLogin from "./pages/AdminLogin";
 
 function App() {
   return (
-    <div>
-      <Navbar />
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/events" element={<Events />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/invitation" element={<Invitation />} />
-        <Route path="/committee" element={<Committee />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/admin" element={<AdminLogin />} />
-      </Routes>
-    </div>
+    
+      <MainLayout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/invitation" element={<Invitation />} />
+          <Route path="/committee" element={<Committee />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/admin" element={<AdminLogin />} />
+        </Routes>
+      </MainLayout>
   );
 }
 

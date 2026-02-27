@@ -1,19 +1,13 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function Navbar() {
-  const [dark, setDark] = useState(true);
-
-  const toggleTheme = () => {
-    setDark(!dark);
-    document.body.classList.toggle("bg-white");
-    document.body.classList.toggle("text-black");
-  };
+  const { language, toggleLanguage } = useLanguage();
 
   return (
     <nav className="bg-black/80 backdrop-blur-md text-white px-6 py-4 flex justify-between items-center sticky top-0 z-50">
       <h1 className="font-bold text-gold text-lg">
-        RamWadi 75th Mahotsav
+        रामवाडी रामनवमी
       </h1>
 
       <div className="flex gap-5 items-center">
@@ -33,10 +27,10 @@ export default function Navbar() {
         </Link>
 
         <button
-          onClick={toggleTheme}
-          className="border px-2 py-1 rounded"
+          onClick={toggleLanguage}
+          className="border px-3 py-1 rounded"
         >
-          Toggle
+          {language === "mr" ? "EN" : "मराठी"}
         </button>
       </div>
     </nav>

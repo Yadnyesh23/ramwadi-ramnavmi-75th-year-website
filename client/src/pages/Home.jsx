@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
+import { useLanguage } from "../context/LanguageContext";
+import templeImage from "../assets/temple.png";
 
 const festivalDate = new Date("March 26, 2026 00:00:00").getTime();
 
 export default function Home() {
+  const { language } = useLanguage();
   const [timeLeft, setTimeLeft] = useState({});
 
   useEffect(() => {
@@ -17,57 +20,57 @@ export default function Home() {
       const minutes = Math.floor(
         (distance % (1000 * 60 * 60)) / (1000 * 60)
       );
-      const seconds = Math.floor(
-        (distance % (1000 * 60)) / 1000
-      );
 
-      setTimeLeft({ days, hours, minutes , seconds});
+      setTimeLeft({ days, hours, minutes });
     }, 1000);
 
     return () => clearInterval(timer);
   }, []);
 
   return (
-    <div className="min-h-[90vh] bg-templeDark text-white">
-      
-      <div
-        className="min-h-[90vh] flex flex-col items-center justify-center text-center bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1600375462888-9e0bdb0c7c2b')",
-        }}
-      >
-        <div className="bg-black/60 p-10 rounded-xl backdrop-blur-md">
-          <h1 className="text-4xl md:text-6xl font-bold text-gold mb-4">
-            RamWadi Ram Navmi
-          </h1>
+    <div
+      className="min-h-[90vh] flex items-center justify-center bg-cover bg-center"
+      style={{ backgroundImage: `url(${templeImage})` }}
+    >
+      <div className="bg-black/70 p-10 rounded-xl text-center backdrop-blur-md">
+        {language === "mr" ? (
+          <>
+            <h1 className="text-4xl md:text-6xl text-gold font-bold mb-3">
+              रामवाडी रामनवमी
+            </h1>
 
-          <h2 className="text-2xl md:text-4xl text-saffron mb-6">
-            75th Amrut Mahotsav
-          </h2>
+            <h2 className="text-3xl text-saffron mb-4">
+              ७५ वा अमृत महोत्सव
+            </h2>
 
-          <p className="mb-6 text-lg">
-            Celebrating on 26 March 2026
-          </p>
+            <p className="mb-6">दिनांक: २६ मार्च २०२६</p>
+          </>
+        ) : (
+          <>
+            <h1 className="text-4xl md:text-6xl text-gold font-bold mb-3">
+              RamWadi Ram Navmi
+            </h1>
 
-          
-          <div className="flex gap-6 justify-center text-xl">
-            <div>
-              <p className="text-3xl font-bold">{timeLeft.days}</p>
-              <p>Days</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold">{timeLeft.hours}</p>
-              <p>Hours</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold">{timeLeft.minutes}</p>
-              <p>Minutes</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold">{timeLeft.seconds}</p>
-              <p>Seconds</p>
-            </div>
+            <h2 className="text-3xl text-saffron mb-4">
+              75th Amrut Mahotsav
+            </h2>
+
+            <p className="mb-6">26 March 2026</p>
+          </>
+        )}
+
+        <div className="flex gap-6 justify-center text-xl">
+          <div>
+            <p className="text-3xl font-bold">{timeLeft.days}</p>
+            <p>{language === "mr" ? "दिवस" : "Days"}</p>
+          </div>
+          <div>
+            <p className="text-3xl font-bold">{timeLeft.hours}</p>
+            <p>{language === "mr" ? "तास" : "Hours"}</p>
+          </div>
+          <div>
+            <p className="text-3xl font-bold">{timeLeft.minutes}</p>
+            <p>{language === "mr" ? "मिनिटे" : "Minutes"}</p>
           </div>
         </div>
       </div>
