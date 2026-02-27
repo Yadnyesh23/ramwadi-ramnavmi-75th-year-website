@@ -4,13 +4,18 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {
-      colors: {
-        saffron: "#FF7A00",
-        gold: "#FFD700",
-        templeDark: "#0f0f0f"
-      }
+  extend: {
+    colors: {
+      primary: "#0B0B0B",
+      card: "#111111",
+      saffron: "#FF7A00",
+      gold: "#D4AF37",
+      text: "#E5E5E5",
     },
   },
+  fontFamily: {
+      devnagari: ["Tiro Devanagari Marathi", "serif"],
+    },
+},
   plugins: [],
 }
