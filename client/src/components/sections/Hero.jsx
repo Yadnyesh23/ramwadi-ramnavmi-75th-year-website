@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import temple from "../../assets/temple.png";
 import { useLanguage } from "../../context/LanguageContext";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   const { language } = useLanguage();
@@ -13,10 +14,10 @@ export default function Hero() {
     const difference = targetDate - now;
 
     return {
-      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-      minutes: Math.floor((difference / 1000 / 60) % 60),
-      seconds: Math.floor((difference / 1000) % 60),
+      days: Math.max(0, Math.floor(difference / (1000 * 60 * 60 * 24))),
+      hours: Math.max(0, Math.floor((difference / (1000 * 60 * 60)) % 24)),
+      minutes: Math.max(0, Math.floor((difference / 1000 / 60) % 60)),
+      seconds: Math.max(0, Math.floor((difference / 1000) % 60)),
     };
   };
 
@@ -43,32 +44,45 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/70"></div>
 
       <div className="relative z-10 px-6 max-w-5xl">
-        <p className="text-gold mb-4">
-          {language === "mr"
-            ? "राम मंदिर • रामवाडी"
-            : "Ram Temple • Ramwadi"}
-        </p>
+        {/* Title Animation */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <p className="text-gold mb-4">
+            {language === "mr"
+              ? "राम मंदिर • रामवाडी"
+              : "Ram Temple • Ramwadi"}
+          </p>
 
-        <h1 className="font-devnagari text-4xl md:text-6xl font-bold text-white">
-          {language === "mr"
-            ? "रामवाडी रामनवमी"
-            : "Ramwadi Ram Navami"}
-        </h1>
+          <h1 className="font-devnagari text-4xl md:text-6xl font-bold text-white">
+            {language === "mr"
+              ? "रामवाडी रामनवमी"
+              : "Ramwadi Ram Navami"}
+          </h1>
 
-        <h2 className="font-devnagari text-2xl md:text-4xl text-saffron mt-4">
-          {language === "mr"
-            ? "७५ वा अमृत महोत्सव"
-            : "75th Amrut Mahotsav"}
-        </h2>
+          <h2 className="font-devnagari text-2xl md:text-4xl text-saffron mt-4">
+            {language === "mr"
+              ? "७५ वा अमृत महोत्सव"
+              : "75th Amrut Mahotsav"}
+          </h2>
+        </motion.div>
 
-        {/* Countdown */}
-        <div className="flex justify-center gap-4 mt-10 flex-wrap">
+        {/* Countdown Animation */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          className="flex justify-center gap-4 mt-10 flex-wrap"
+        >
           <TimeBox value={timeLeft.days} label={language === "mr" ? "दिवस" : "Days"} />
           <TimeBox value={timeLeft.hours} label={language === "mr" ? "तास" : "Hours"} />
           <TimeBox value={timeLeft.minutes} label={language === "mr" ? "मिनिटे" : "Minutes"} />
           <TimeBox value={timeLeft.seconds} label={language === "mr" ? "सेकंद" : "Seconds"} />
-        </div>
+        </motion.div>
 
+        {/* Button */}
         <Link
           to="/invitation"
           className="inline-block mt-10 bg-saffron px-7 py-3 rounded-md font-semibold hover:opacity-90"
@@ -82,7 +96,7 @@ export default function Hero() {
 
 function TimeBox({ value, label }) {
   return (
-    <div className="bg-card px-6 py-4 rounded-lg min-w-90px">
+    <div className="bg-card px-6 py-4 rounded-lg min-w-[90px]">
       <p className="text-2xl md:text-3xl font-bold text-saffron">{value}</p>
       <p className="text-gray-300 text-sm">{label}</p>
     </div>
