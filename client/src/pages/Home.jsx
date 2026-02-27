@@ -20,8 +20,11 @@ export default function Home() {
       const minutes = Math.floor(
         (distance % (1000 * 60 * 60)) / (1000 * 60)
       );
+      const seconds = Math.floor(
+  (distance % (1000 * 60)) / 1000
+);
 
-      setTimeLeft({ days, hours, minutes });
+      setTimeLeft({ days, hours, minutes, seconds });
     }, 1000);
 
     return () => clearInterval(timer);
@@ -71,6 +74,10 @@ export default function Home() {
           <div>
             <p className="text-3xl font-bold">{timeLeft.minutes}</p>
             <p>{language === "mr" ? "मिनिटे" : "Minutes"}</p>
+          </div>
+          <div>
+            <p className="text-3xl font-bold">{timeLeft.seconds}</p>
+            <p>{language === "mr" ? "सेकंद" : "seconds"}</p>
           </div>
         </div>
       </div>
