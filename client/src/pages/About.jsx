@@ -1,5 +1,6 @@
 import { useLanguage } from "../context/LanguageContext";
 import { motion } from "framer-motion";
+import img1 from "../assets/temple.png";
 
 export default function About() {
   const { language } = useLanguage();
@@ -7,7 +8,7 @@ export default function About() {
   return (
     <section className="bg-[#FFF9F2] min-h-screen py-16 px-6 relative">
       {/* Decorative Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')]"></div>
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" ></div>
 
       <div className="max-w-6xl mx-auto relative z-10">
         
@@ -28,7 +29,7 @@ export default function About() {
           >
             <div className="border-12px border-white shadow-2xl relative">
               <img 
-                src="/temple-old.jpg" 
+                src={img1} 
                 alt="Mandals History" 
                 className="w-full h-auto"
               />
