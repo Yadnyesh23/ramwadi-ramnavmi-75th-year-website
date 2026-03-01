@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 
 import img1 from "../../assets/temple.png";
 import img2 from "../../assets/temple.png";
-import img3 from "../../assets/temple.png";
+import img3 from "../../assets/image.png";
 import img4 from "../../assets/temple.png";
-import img5 from "../../assets/temple.png";
+import img5 from "../../assets/image.png";
 
 export default function GalleryPreview() {
   const { language } = useLanguage();
