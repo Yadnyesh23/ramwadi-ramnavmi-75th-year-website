@@ -44,7 +44,7 @@ export default function Committee() {
   ];
 
   const cityMembers = [
-    { name: "Raju Pattere", role: roles.president },
+    { name: "Raju Patere", role: roles.president },
     { name: "Ganesh Halde", role: roles.secretary },
     { name: "Shashikant Warange", role: roles.treasurer },
   ];
