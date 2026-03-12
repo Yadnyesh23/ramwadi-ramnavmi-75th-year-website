@@ -12,10 +12,9 @@ export default function About() {
       <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-orange-500 via-yellow-500 to-red-600"></div>
 
       <div className="max-w-6xl mx-auto relative z-10">
-        
         {/* Section Header */}
         <div className="text-center mb-20">
-          <_motion.span 
+          <_motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             className="text-orange-600 font-bold tracking-[0.2em] uppercase text-sm"
@@ -34,7 +33,7 @@ export default function About() {
 
         {/* 1. Founders & History Section */}
         <div className="flex flex-col lg:flex-row items-center gap-16 mb-24">
-          <_motion.div 
+          <_motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             className="w-full lg:w-1/2 relative"
@@ -42,9 +41,9 @@ export default function About() {
             {/* Elegant Image Frame */}
             <div className="relative p-4 bg-white shadow-2xl rounded-sm border border-gray-100">
               <div className="absolute -top-4 -left-4 w-20 h-20 border-t-4 border-l-4 border-yellow-500"></div>
-              <img 
-                src={img1} 
-                alt="Temple History" 
+              <img
+                src={img1}
+                alt="Temple History"
                 className="w-full h-auto rounded-sm shadow-inner"
               />
               <div className="absolute -bottom-4 -right-4 w-20 h-20 border-b-4 border-r-4 border-[#D32F2F]"></div>
@@ -59,14 +58,23 @@ export default function About() {
               <p className="bg-orange-50 p-4 rounded-r-xl border-l-4 border-orange-500 italic">
                 {t(
                   "Established by Late Daulat Putlaji Telange (Master) and Late Vithoba Moruji Kalekar (Master) around 75 years ago in 1952.",
-                  "१९५२ मध्ये स्वर्गीय दौलत पुतलाजी तेलंगे (मास्तर) आणि स्वर्गीय विठोबा मोरुजी कळेकर (मास्तर) यांनी सुमारे ७५ वर्षांपूर्वी या मंडळाची स्थापना केली."
+                  "१९५२ मध्ये स्वर्गीय दौलत पुतलाजी तेलंगे (मास्तर) आणि स्वर्गीय विठोबा मोरुजी कळेकर (मास्तर) यांनी सुमारे ७५ वर्षांपूर्वी या मंडळाची स्थापना केली.",
                 )}
               </p>
               <ul className="space-y-3">
                 {[
-                  { en: "Dedicated to social service and community unity", mr: "सामाजिक सेवा आणि सामुदायिक एकात्मतेसाठी समर्पित" },
-                  { en: "Promoting Dharma and the teachings of Lord Rama", mr: "धर्म आणि प्रभू श्रीरामांच्या शिकवणीचा प्रसार" },
-                  { en: "Conducting Ram Navami celebrations for decades", mr: "अनेक दशकांपासून अखंड रामनवमी उत्सव" }
+                  {
+                    en: "Dedicated to social service and community unity",
+                    mr: "सामाजिक सेवा आणि सामुदायिक एकात्मतेसाठी समर्पित",
+                  },
+                  {
+                    en: "Promoting Dharma and the teachings of Lord Rama",
+                    mr: "धर्म आणि प्रभू श्रीरामांच्या शिकवणीचा प्रसार",
+                  },
+                  {
+                    en: "Conducting Ram Navami celebrations for decades",
+                    mr: "अनेक दशकांपासून अखंड रामनवमी उत्सव",
+                  },
                 ].map((item, i) => (
                   <li key={i} className="flex gap-3 items-start">
                     <span className="text-orange-600 font-bold">●</span>
@@ -80,33 +88,42 @@ export default function About() {
 
         {/* 2. Mission & Values (Colored Cards) */}
         <div className="grid md:grid-cols-3 gap-8 mb-24">
-          <ColoredCard 
-            title={t("Our Mission", "आमचे ध्येय")} 
-            color="bg-red-700" 
+          <ColoredCard
+            title={t("Our Mission", "आमचे ध्येय")}
+            color="bg-red-700"
             icon="🎯"
           >
-            {t("Harmony, service, and cultural preservation are at our core.", "सुसंवाद, सेवा आणि सांस्कृतिक जतन हे आमचे मूळ आहे.")}
+            {t(
+              "Harmony, service, and cultural preservation are at our core.",
+              "सुसंवाद, सेवा आणि सांस्कृतिक जतन हे आमचे मूळ आहे.",
+            )}
           </ColoredCard>
-          <ColoredCard 
-            title={t("The Temple", "भव्य मंदिर")} 
-            color="bg-orange-600" 
+          <ColoredCard
+            title={t("The Temple", "भव्य मंदिर")}
+            color="bg-orange-600"
             icon="🕌"
           >
-            {t("Renovated and maintaining a large Lord Rama temple in our village near Sudhagad.", "सुधागड जवळील गावात भव्य श्रीराम मंदिराचे नूतनीकरण आणि देखभाल.")}
+            {t(
+              "Renovated and maintaining a large Lord Rama temple in our village near Sudhagad.",
+              "सुधागड जवळील गावात भव्य श्रीराम मंदिराचे नूतनीकरण आणि देखभाल.",
+            )}
           </ColoredCard>
-          <ColoredCard 
-            title={t("Growth", "विकास")} 
-            color="bg-yellow-600" 
+          <ColoredCard
+            title={t("Growth", "विकास")}
+            color="bg-yellow-600"
             icon="🌱"
           >
-            {t("Supporting students' education and moral development.", "विद्यार्थ्यांचे शिक्षण आणि नैतिक विकासासाठी सदैव तत्पर.")}
+            {t(
+              "Supporting students' education and moral development.",
+              "विद्यार्थ्यांचे शिक्षण आणि नैतिक विकासासाठी सदैव तत्पर.",
+            )}
           </ColoredCard>
         </div>
 
         {/* 3. Festivals & Service Section */}
         <div className="grid lg:grid-cols-2 gap-12 mb-24">
           {/* Festivals */}
-          <_motion.div 
+          <_motion.div
             whileHover={{ scale: 1.02 }}
             className="bg-white rounded-3xl p-8 shadow-xl border border-orange-100"
           >
@@ -116,7 +133,10 @@ export default function About() {
             </h3>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {festivals.map((f, i) => (
-                <li key={i} className="flex items-center gap-2 bg-[#FFF9F2] p-3 rounded-xl text-gray-700 font-bold border-l-4 border-yellow-500">
+                <li
+                  key={i}
+                  className="flex items-center gap-2 bg-[#FFF9F2] p-3 rounded-xl text-gray-700 font-bold border-l-4 border-yellow-500"
+                >
                   {t(f.en, f.mr)}
                 </li>
               ))}
@@ -124,7 +144,7 @@ export default function About() {
           </_motion.div>
 
           {/* Social Service */}
-          <_motion.div 
+          <_motion.div
             whileHover={{ scale: 1.02 }}
             className="bg-white rounded-3xl p-8 shadow-xl border border-red-100"
           >
@@ -134,7 +154,10 @@ export default function About() {
             </h3>
             <div className="space-y-3">
               {socialService.map((s, i) => (
-                <div key={i} className="flex items-center gap-4 p-2 hover:bg-red-50 rounded-lg transition-colors">
+                <div
+                  key={i}
+                  className="flex items-center gap-4 p-2 hover:bg-red-50 rounded-lg transition-colors"
+                >
                   <div className="w-2 h-2 rounded-full bg-red-600"></div>
                   <p className="text-gray-700 font-medium">{t(s.en, s.mr)}</p>
                 </div>
@@ -153,18 +176,28 @@ export default function About() {
               <div className="flex gap-4 items-start">
                 <span className="text-2xl">📍</span>
                 <p className="text-lg opacity-90 leading-relaxed font-light">
-                  Ramwadi, Pachchapur,<br />
-                  Maharashtra 412108, India<br />
-                  <span className="font-bold text-yellow-400">({t("Near Sudhagad Fort", "सुधागड किल्ल्याजवळ")})</span>
+                  Ramwadi, Pachchapur,
+                  <br />
+                  Maharashtra 412108, India
+                  <br />
+                  <span className="font-bold text-yellow-400">
+                    ({t("Near Sudhagad Fort", "सुधागड किल्ल्याजवळ")})
+                  </span>
                 </p>
               </div>
               <div className="flex gap-4 items-center">
                 <span className="text-2xl">🏥</span>
-                <p className="opacity-90">{t("Health Awareness & Community Unity", "आरोग्य आणि सामाजिक एकता")}</p>
+                <p className="opacity-90">
+                  {t(
+                    "Health Awareness & Community Unity",
+                    "आरोग्य आणि सामाजिक एकता",
+                  )}
+                </p>
               </div>
-              <a 
-                href="google.com/maps?ll=18.52326,73.304034&z=16&t=h&hl=en&gl=IN&mapclient=embed&cid=12344254476880892386" 
-                target="_blank" 
+              <a
+                href="https://www.google.com/maps?q=18.523260,73.304034"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-6 inline-flex items-center gap-3 bg-yellow-500 hover:bg-white hover:text-red-700 text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg"
               >
                 <span>🚀</span> {t("Get Directions", "नकाशा पहा")}
@@ -172,20 +205,16 @@ export default function About() {
             </div>
           </div>
           <div className="lg:w-3/5 h-112.5">
-            
-
             <iframe
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3822.5323782161554!2d73.30148027523684!3d18.523260382570747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be8197b5c94aabd%3A0xab4f9a0b4782d1e2!2sRamwadi!5e1!3m2!1sen!2sin!4v1771752454607!5m2!1sen!2sin"
-  width="100%"
-  height="350"
-  className="w-full h-full border-0 grayscale-[10%] hover:grayscale-0 transition-all"
-  style={{ border: 0 }}
-  allowFullScreen
-  loading="lazy"
-  referrerPolicy="no-referrer-when-downgrade"
-  
-/>
-            
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3822.5323782161554!2d73.30148027523684!3d18.523260382570747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be8197b5c94aabd%3A0xab4f9a0b4782d1e2!2sRamwadi!5e1!3m2!1sen!2sin!4v1771752454607!5m2!1sen!2sin"
+              width="100%"
+              height="350"
+              className="w-full h-full border-0 grayscale-[10%] hover:grayscale-0 transition-all"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
         </div>
       </div>
@@ -195,7 +224,7 @@ export default function About() {
 
 function ColoredCard({ title, children, color, icon }) {
   return (
-    <_motion.div 
+    <_motion.div
       whileHover={{ y: -10 }}
       className={`${color} p-8 rounded-2xl shadow-xl text-white relative overflow-hidden group`}
     >
@@ -204,7 +233,9 @@ function ColoredCard({ title, children, color, icon }) {
       </div>
       <div className="text-3xl mb-4">{icon}</div>
       <h3 className="text-xl font-bold mb-3">{title}</h3>
-      <p className="opacity-90 leading-relaxed text-sm font-medium">{children}</p>
+      <p className="opacity-90 leading-relaxed text-sm font-medium">
+        {children}
+      </p>
     </_motion.div>
   );
 }
@@ -216,13 +247,16 @@ const festivals = [
   { en: "Gokul Ashtami", mr: "गोकुळ अष्टमी" },
   { en: "Religious Processions", mr: "धार्मिक मिरवणूक" },
   { en: "Devotional Programs", mr: "भक्ती कार्यक्रम" },
-  { en: "Community Prayer", mr: "सामुदायिक प्रार्थना" }
+  { en: "Community Prayer", mr: "सामुदायिक प्रार्थना" },
 ];
 
 const socialService = [
   { en: "Educational support initiatives", mr: "शैक्षणिक मदत उपक्रम" },
   { en: "Health check-up & awareness camps", mr: "आरोग्य तपासणी व जागरूकता" },
-  { en: "Cultural, Art and Sports activities", mr: "सांस्कृतिक, कला आणि क्रीडा" },
+  {
+    en: "Cultural, Art and Sports activities",
+    mr: "सांस्कृतिक, कला आणि क्रीडा",
+  },
   { en: "Spiritual tours & Guidance", mr: "आध्यात्मिक सहली आणि मार्गदर्शन" },
-  { en: "Volunteer programs", mr: "स्वयंसेवक कार्यक्रम" }
+  { en: "Volunteer programs", mr: "स्वयंसेवक कार्यक्रम" },
 ];
