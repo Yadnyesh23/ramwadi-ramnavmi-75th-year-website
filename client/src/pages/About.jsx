@@ -194,14 +194,17 @@ export default function About() {
                   )}
                 </p>
               </div>
-              <a
-                href="https://www.google.com/maps?q=18.523260,73.304034"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center gap-3 bg-yellow-500 hover:bg-white hover:text-red-700 text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg"
-              >
-                <span>🚀</span> {t("Get Directions", "नकाशा पहा")}
-              </a>
+              <button
+  onClick={() =>
+    window.open(
+      "https://www.google.com/maps?q=18.523260,73.304034",
+      "_blank"
+    )
+  }
+  className="mt-6 inline-flex items-center gap-3 bg-yellow-500 hover:bg-white hover:text-red-700 text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg"
+>
+  <span>🚀</span> {t("Get Directions", "नकाशा पहा")}
+</button>
             </div>
           </div>
           <div className="lg:w-3/5 h-112.5">
